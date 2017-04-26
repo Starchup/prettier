@@ -612,7 +612,7 @@ function genericPrintNoParens(path, options, print, args) {
         return "{}";
       }
 
-      parts.push("{");
+      parts.push(concat([hardline, "{"]));
 
       // Babel 6
       if (hasDirectives) {
@@ -1421,6 +1421,7 @@ function genericPrintNoParens(path, options, print, args) {
       }
 
       return concat([
+        hardline,
         "{",
         n.body.length > 0
           ? indent(
